@@ -1,0 +1,4 @@
+node_modules
+logs
+database/UserDB.db
+config.json
