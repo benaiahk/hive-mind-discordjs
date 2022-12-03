@@ -2,6 +2,7 @@ const moment = require("moment")
 const fs = require("fs")
 
 class LoggerUtil {
+    // TODO: Create new log file when neccessary, potentially organize logs by type into their own files
     constructor() {
         this.FILE_STREAM = fs.createWriteStream(
             "./logs/catalina.log", 

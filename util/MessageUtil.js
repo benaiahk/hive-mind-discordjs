@@ -12,6 +12,7 @@ class MessageUtil {
         }
     }
 
+    // TODO: Refactor with the knowledge that messages have a built-in clean content member
     LogMessage = (output, guild, author, message) => {
         var cleanContent = `${this.removeIllegalCharacters(message.cleanContent)}`
         if (cleanContent != "" && cleanContent.trim() != "") {
@@ -26,15 +27,6 @@ class MessageUtil {
         if (message.embeds.length > 0) {
             if (output) { Logger.quiet(`(GID:${guild.id}, UID:${author.id}) ${author.username} sent ${message.embeds.length} embedded links`) }
         }
-    }
-
-    LogAllMessages = async (client) => {
-        var allGuilds = []
-        var allGuildEntries = await SQLiteUtil.SelectAllGuilds()
-        allGuildEntries.forEach((row) => {
-            console.log(row.GUILD_ID)
-            console.log(client.guilds.cache.get(row.GUILD_ID))
-        })
     }
 }
 

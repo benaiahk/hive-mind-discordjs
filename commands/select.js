@@ -12,7 +12,8 @@ module.exports = {
                 .setDescription('SELECT Query')
                 .setRequired(true))
     ,
-
+    
+    // TODO: Reformat to make more readable, add ability to grab certain # of rows
     async execute(interaction, client) {
         if (interaction.user.id != Owner) {
             await interaction.reply("I'm afraid I can't let you do that.");

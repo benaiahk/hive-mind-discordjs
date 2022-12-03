@@ -11,15 +11,16 @@ module.exports = {
         .setDescription("FETCH ME THEIR SOULS")
     ,
 
+    // TODO: Create command options to exclude private channels, choose specific channels, include a timeframe
     async execute(interaction, client) {
         if (interaction.user.id != Owner) {
             await interaction.reply("I'm afraid I can't let you do that.")
         }
         else {
-            await interaction.reply("hello, father")
             const channels = client.channels.cache
             Logger.info(`Located ${channels.size} channels. Attempting to save text channels to the database...`)
-            
+            await interaction.reply(`Located ${channels.size} channels. Attempting to save text channels to the database...`)
+
             const promise = new Promise((resolve, reject) => {
                 var successes = 0
                 var failures = 0
