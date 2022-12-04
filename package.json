@@ -1,7 +1,7 @@
 {
-  "name": "newt-bot",
-  "version": "1.0.0",
-  "description": "Newt's general discord bot",
+  "name": "hive-mind",
+  "version": "2.0.0",
+  "description": "Assimilate",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
