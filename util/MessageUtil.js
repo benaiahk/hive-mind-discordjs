@@ -1,7 +1,6 @@
 const { Logger } = require("./LoggerUtil.js")
 const { SQLiteUtil } = require("./SQLiteUtil.js")
 const fetchAll = require('discord-fetch-all');
-const fs = require("fs")
 
 class MessageUtil {
     constructor() {
@@ -10,6 +9,10 @@ class MessageUtil {
         this.UserLogMessage = (message) => {
             SQLiteUtil.CreateMessage(message)
         }
+    }
+
+    IsChannelPrivate = (channel) => {
+        return !channel.permissionsFor(channel.guild.roles.everyone).serialize().ViewChannel
     }
 
     // TODO: Refactor with the knowledge that messages have a built-in clean content member
